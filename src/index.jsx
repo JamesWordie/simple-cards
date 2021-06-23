@@ -1,56 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import Faker from 'faker';
+import Faker from 'faker';
 import Comment from './components/comment'
+import ApprovalCard from './components/approval-card'
 
 const App = () => {
   return (
     <div className="ui container comments">
-      <Comment />
-      <Comment />
-      <Comment />
-{/*      <div className="comment">
-        <a href="/" className="avatar">
-          <img src={Faker.image.avatar()} alt="avatar" />
-        </a>
-        <div className="content">
-          <a href="/" className="author">
-            {Faker.name.firstName()}
-          </a>
-          <div className="metadata">
-            <span className="date">Today at 6:00pm</span>
-          </div>
-          <div className="text">{Faker.hacker.phrase()}</div>
-        </div>
-      </div>
-      <div className="comment">
-        <a href="/" className="avatar">
-          <img src={Faker.image.avatar()} alt="avatar" />
-        </a>
-        <div className="content">
-          <a href="/" className="author">
-            {Faker.name.firstName()}
-          </a>
-          <div className="metadata">
-            <span className="date">Today at 6:00pm</span>
-          </div>
-          <div className="text">{Faker.hacker.phrase()}</div>
-        </div>
-      </div>
-      <div className="comment">
-        <a href="/" className="avatar">
-          <img src={Faker.image.avatar()} alt="avatar" />
-        </a>
-        <div className="content">
-          <a href="/" className="author">
-            {Faker.name.firstName()}
-          </a>
-          <div className="metadata">
-            <span className="date">Today at 6:00pm</span>
-          </div>
-          <div className="text">{Faker.hacker.phrase()}</div>
-        </div>
-      </div>*/}
+      <ApprovalCard>
+        <Comment
+          author="Sam"
+          time="Today at 4:40pm"
+          post="Great post!"
+          avatar={Faker.image.avatar()}
+        />
+      </ApprovalCard>
+    {/*by setting up as above you can pass the object of the comment into the approval card*/}
+      <ApprovalCard>
+        <Comment
+          author="Alex"
+          time="Today at 4:50pm"
+          post="Needs work!"
+          avatar={Faker.image.avatar()}
+        />
+      </ApprovalCard>
+      <ApprovalCard>
+        <Comment
+          author="Jane"
+          time="Today at 6:40pm"
+          post="Awesome!"
+          avatar={Faker.image.avatar()}
+        />
+      </ApprovalCard>
     </div>
   );
 };
